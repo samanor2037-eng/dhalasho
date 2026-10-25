@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="so">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#160e20" />
+  <meta name="description" content="Hambalyo dhalasho — 25 October 2026" />
+  <title>Raha, jacaylkayga ♡ — 25 October 2026</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap');
+
+    :root {
+      --night: #100a18;
+      --plum: #241126;
+      --wine: #741d37;
+      --red: #bd2948;
+      --gold: #d9b86a;
+      --paper: #fff9ec;
+      --ink: #4a2431;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      overflow: hidden;
+      color: #fff8ed;
+      font-family: "Manrope", system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 50% 34%, rgba(146, 45, 74, .27), transparent 33%),
+        radial-gradient(circle at 12% 90%, rgba(91, 45, 111, .22), transparent 30%),
+        linear-gradient(145deg, var(--night), var(--plum));
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .24;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+      mix-blend-mode: soft-light;
+    }
+
+    .stage {
+      position: relative;
+      isolation: isolate;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 32px 18px;
+    }
+
+    .glow {
+      position: fixed;
+      width: min(78vw, 620px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgba(174, 46, 76, .16);
+      filter: blur(90px);
+      pointer-events: none;
+    }
+
+    .intro {
+      position: absolute;
+      top: clamp(28px, 7vh, 72px);
+      width: 100%;
+      text-align: center;
+      z-index: 20;
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+
+    .intro h1 {
+      margin: 0;
+      font: 600 clamp(2.25rem, 8vw, 4.75rem)/.95 "Cormorant Garamond", serif;
+      letter-spacing: -.025em;
+    }
+
+    .intro p:last-child {
+      margin: 12px 0 0;
+      color: rgba(255, 248, 237, .64);
+      font-size: .85rem;
+      letter-spacing: .12em;
+    }
+
+    .experience {
+      position: relative;
+      width: min(92vw, 520px);
+      height: min(630px, 76svh);
+      min-height: 500px;
+      display: grid;
+      place-items: end center;
+      perspective: 1200px;
+    }
+
+    .envelope-wrap {
+      position: relative;
+      width: min(88vw, 430px);
+      height: 285px;
+      margin-bottom: clamp(48px, 8vh, 86px);
+      transform-style: preserve-3d;
+      transition: transform .9s cubic-bezier(.2,.75,.2,1);
+    }
+
+    .envelope {
+      position: absolute;
+      inset: 0;
+      filter: drop-shadow(0 30px 26px rgba(0, 0, 0, .35));
+    }
+
+    .envelope-back {
+      position: absolute;
+      inset: 0;
+      border-radius: 9px;
+      background: #e8d5bb;
+      box-shadow: inset 0 0 0 1px rgba(85, 51, 42, .13);
+    }
+
+    .flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64%;
+      z-index: 5;
+      transform-origin: top center;
+      transform: rotateX(0deg);
+      transition: transform 1s cubic-bezier(.3,.05,.2,1), z-index 0s .32s;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      background: linear-gradient(145deg, #fff5dd, #e9d3b4 70%);
+      backface-visibility: visible;
+    }
+
+    .letter {
+      position: absolute;
+      z-index: 2;
+      left: 2%;
+      bottom: 8%;
+      width: 96%;
+      height: 91%;
+      padding: 25px 28px 23px;
+      overflow: hidden;
+      border: 1px solid rgba(161, 121, 81, .22);
+      border-radius: 5px;
+      color: var(--ink);
+      text-align: center;
+      background:
+        linear-gradient(rgba(255,255,255,.38), rgba(255,255,255,.38)),
+        repeating-linear-gradient(0deg, transparent 0 28px, rgba(177, 141, 98, .055) 29px),
+        var(--paper);
+      box-shadow: 0 10px 35px rgba(46, 22, 27, .15);
+      transition: transform 1.25s cubic-bezier(.18,.75,.22,1), height .85s ease, width .85s ease, left .85s ease, opacity .7s ease;
+    }
+
+    .letter::before,
+    .letter::after {
+      content: "✦";
+      position: absolute;
+      top: 15px;
+      color: #b58a45;
+      font-size: .75rem;
+    }
+
+    .letter::before { left: 18px; }
+    .letter::after { right: 18px; }
+
+    .date {
+      margin: 0 0 13px;
+      color: #a46e33;
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .letter h2 {
+      margin: 0 0 10px;
+      font: 700 clamp(1.7rem, 6.2vw, 2.45rem)/1 "Cormorant Garamond", serif;
+      color: #7d1832;
+    }
+
+    .message {
+      margin: 0 auto;
+      max-width: 365px;
+      font: 600 clamp(.9rem, 3.4vw, 1.02rem)/1.46 "Cormorant Garamond", serif;
+    }
+
+    .blessing {
+      display: block;
+      margin-top: 9px;
+      color: #8d263e;
+      font-weight: 700;
+    }
+
+    .signature {
+      margin: 10px 0 0;
+      color: #aa7541;
+      font: italic 600 1.02rem/1 "Cormorant Garamond", serif;
+    }
+
+    .envelope-front {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      overflow: hidden;
+      border-radius: 8px;
+      background: linear-gradient(160deg, #f3e3c9, #dfc4a1);
+      clip-path: polygon(0 0, 50% 57%, 100% 0, 100% 100%, 0 100%);
+      box-shadow: inset 0 0 0 1px rgba(85, 51, 42, .1);
+    }
+
+    .envelope-front::before,
+    .envelope-front::after {
+      content: "";
+      position: absolute;
+      bottom: -22%;
+      width: 68%;
+      height: 100%;
+      background: rgba(255,255,255,.12);
+    }
+
+    .envelope-front::before { left: -25%; transform: rotate(33deg); }
+    .envelope-front::after { right: -25%; transform: rotate(-33deg); }
+
+    .seal-button {
+      position: absolute;
+      z-index: 8;
+      top: 43%;
+      left: 50%;
+      width: 76px;
+      height: 76px;
+      border: 0;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      color: #f8d9a7;
+      background:
+        radial-gradient(circle at 35% 30%, #d5495e, #a51f3c 55%, #72152d 100%);
+      box-shadow:
+        0 7px 14px rgba(79, 12, 28, .35),
+        inset 0 0 0 4px rgba(255,255,255,.07),
+        inset 0 0 0 7px rgba(88, 14, 32, .24);
+      transition: transform .25s ease, opacity .55s ease;
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+
+    .seal-button:hover { transform: translate(-50%, -50%) scale(1.07); }
+    .seal-button:focus-visible { outline: 3px solid #fff; outline-offset: 5px; }
+    .seal-button span { display: block; font: 700 1.8rem/1 "Cormorant Garamond", serif; }
+
+    .open-label {
+      position: absolute;
+      z-index: 9;
+      top: calc(43% + 54px);
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,.76);
+      font-size: .72rem;
+      letter-spacing: .12em;
+      white-space: nowrap;
+      pointer-events: none;
+      transition: opacity .45s ease;
+    }
+
+    .rose-scene {
+      position: fixed;
+      z-index: 30;
+      left: 50%;
+      bottom: -30px;
+      width: 240px;
+      height: 420px;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, 130px) scale(.55) rotate(-4deg);
+      transform-origin: bottom center;
+      transition: opacity .9s ease, transform 1.4s cubic-bezier(.15,.8,.2,1);
+    }
+
+    .stem {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 8px;
+      height: 235px;
+      border-radius: 99px;
+      transform: translateX(-50%) rotate(2deg);
+      background: linear-gradient(90deg, #15491f, #3b803d 55%, #123a1d);
+      box-shadow: 0 0 18px rgba(37, 115, 55, .2);
+    }
+
+    .leaf {
+      position: absolute;
+      width: 78px;
+      height: 35px;
+      background: linear-gradient(150deg, #4f944f, #174c2b 70%);
+      border-radius: 100% 0 100% 0;
+      box-shadow: inset -7px -5px 9px rgba(0,0,0,.14);
+    }
+
+    .leaf.one { left: 50%; bottom: 112px; transform: rotate(-24deg); transform-origin: left center; }
+    .leaf.two { right: 50%; bottom: 65px; transform: rotate(205deg); transform-origin: right center; }
+
+    .rose {
+      position: absolute;
+      left: 50%;
+      top: 28px;
+      width: 180px;
+      height: 180px;
+      transform: translateX(-50%);
+      filter: drop-shadow(0 20px 22px rgba(71, 8, 22, .36));
+    }
+
+    .petal {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 92px;
+      height: 116px;
+      border-radius: 56% 44% 55% 45% / 67% 65% 35% 33%;
+      background: linear-gradient(145deg, #ed4960 4%, #bd193a 52%, #76142d 100%);
+      box-shadow: inset 9px 7px 13px rgba(255, 126, 139, .18), inset -11px -9px 14px rgba(87, 2, 25, .25);
+      transform-origin: 50% 88%;
+      opacity: .98;
+    }
+
+    .petal:nth-child(1) { transform: translate(-50%,-57%) rotate(0deg) scale(.48); z-index: 9; }
+    .petal:nth-child(2) { transform: translate(-66%,-54%) rotate(-25deg) scale(.62); z-index: 8; }
+    .petal:nth-child(3) { transform: translate(-34%,-54%) rotate(28deg) scale(.62); z-index: 8; }
+    .petal:nth-child(4) { transform: translate(-79%,-43%) rotate(-52deg) scale(.76); z-index: 6; }
+    .petal:nth-child(5) { transform: translate(-21%,-43%) rotate(55deg) scale(.76); z-index: 6; }
+    .petal:nth-child(6) { transform: translate(-50%,-33%) rotate(180deg) scale(.86); z-index: 7; }
+    .petal:nth-child(7) { transform: translate(-91%,-23%) rotate(-76deg) scale(.9); z-index: 4; }
+    .petal:nth-child(8) { transform: translate(-9%,-23%) rotate(77deg) scale(.9); z-index: 4; }
+    .petal:nth-child(9) { transform: translate(-68%,-12%) rotate(-145deg) scale(.98); z-index: 3; }
+    .petal:nth-child(10) { transform: translate(-32%,-12%) rotate(145deg) scale(.98); z-index: 3; }
+
+    .final-text {
+      position: fixed;
+      z-index: 40;
+      top: clamp(32px, 8vh, 84px);
+      left: 50%;
+      width: min(88vw, 620px);
+      text-align: center;
+      opacity: 0;
+      transform: translate(-50%, -18px);
+      transition: opacity .85s ease .45s, transform .85s ease .45s;
+      pointer-events: none;
+    }
+
+    .final-text h2 {
+      margin: 0;
+      font: 600 clamp(2.25rem, 8vw, 4.5rem)/1 "Cormorant Garamond", serif;
+      color: #fff8ed;
+    }
+
+    .final-text p {
+      margin: 10px 0 0;
+      color: #e7bf75;
+      font: 600 1.05rem/1.4 "Cormorant Garamond", serif;
+      letter-spacing: .08em;
+    }
+
+    .restart {
+      position: fixed;
+      z-index: 50;
+      right: 20px;
+      bottom: 20px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      padding: 10px 15px;
+      color: rgba(255,255,255,.78);
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(10px);
+      font: 500 .73rem/1 "Manrope", sans-serif;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .5s ease, transform .5s ease, background .2s ease;
+      pointer-events: none;
+    }
+
+    .restart:hover { background: rgba(255,255,255,.13); }
+
+    .floating-petal {
+      position: fixed;
+      z-index: 25;
+      top: -30px;
+      width: 15px;
+      height: 22px;
+      border-radius: 70% 30% 70% 30%;
+      background: linear-gradient(145deg, #dd4059, #8f1831);
+      opacity: 0;
+      pointer-events: none;
+      animation: fall var(--fall, 6s) linear forwards;
+    }
+
+    .opened .flap {
+      transform: rotateX(180deg);
+      z-index: 1;
+      opacity: 0;
+      transition: transform 1s cubic-bezier(.3,.05,.2,1), opacity .25s ease .78s, z-index 0s .32s;
+    }
+    .opened .seal-button,
+    .opened .open-label { opacity: 0; pointer-events: none; animation: none; }
+    .opened .letter { transform: translateY(-285px); height: 360px; }
+    .opened .intro { opacity: 0; transform: translateY(-18px); }
+
+    .rose-time .envelope-wrap { transform: translateY(250px) scale(.76); }
+    .rose-time .letter { opacity: .12; }
+    .rose-time .rose-scene { opacity: 1; transform: translate(-50%, 0) scale(1) rotate(0); }
+    .rose-time .final-text { opacity: 1; transform: translate(-50%, 0); }
+    .rose-time .restart { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 7px 14px rgba(79,12,28,.35), 0 0 0 0 rgba(202,50,77,.18), inset 0 0 0 4px rgba(255,255,255,.07), inset 0 0 0 7px rgba(88,14,32,.24); }
+      50% { box-shadow: 0 7px 14px rgba(79,12,28,.35), 0 0 0 15px rgba(202,50,77,0), inset 0 0 0 4px rgba(255,255,255,.07), inset 0 0 0 7px rgba(88,14,32,.24); }
+    }
+
+    @keyframes fall {
+      0% { opacity: 0; transform: translate3d(0,-20px,0) rotate(0); }
+      8% { opacity: .8; }
+      100% { opacity: 0; transform: translate3d(var(--drift, 60px), 105vh, 0) rotate(560deg); }
+    }
+
+    @media (max-height: 650px) {
+      .intro { top: 18px; }
+      .intro h1 { font-size: 2.2rem; }
+      .experience { min-height: 440px; height: 94svh; }
+      .envelope-wrap { margin-bottom: 25px; transform: scale(.88); }
+      .opened .letter { transform: translateY(-250px); height: 335px; padding: 25px 28px 22px; }
+      .letter h2 { margin-bottom: 9px; }
+      .message { font-size: .9rem; line-height: 1.48; }
+      .blessing { margin-top: 8px; }
+      .signature { margin-top: 9px; }
+      .rose { top: 66px; transform: translateX(-50%) scale(.82); }
+      .rose-scene { height: 390px; }
+      .final-text { top: 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+    /* A personal, rose-gold keepsake. */
+    body { background: radial-gradient(ellipse at 50% 45%, #572438 0%, #25101e 45%, #100b16 100%); overflow-y:auto; }
+    .stage::before { content:''; position:fixed; inset:16px; border:1px solid #d9b86a30; border-radius:22px; pointer-events:none; }
+    .stage::after { content:'♡'; position:fixed; right:7%; top:38%; font:100px Georgia,serif; color:#d9b86a12; pointer-events:none; transform:rotate(18deg); }
+    .intro h1 { font-size:clamp(4rem,13vw,7rem); color:#f7d9bd; }
+    .name-rest { display:block; font:500 clamp(1.2rem,4vw,1.7rem) Manrope,sans-serif; letter-spacing:.15em; margin-top:12px; }
+    .open-label { color:#7c453b; font-size:.65rem; font-weight:600; }
+    .flower-button { display:block; margin:18px auto 0; border:1px solid #a9735950; border-radius:99px; padding:12px 22px; background:#7d1832; color:#fff2de; cursor:pointer; font:500 .78rem Manrope,sans-serif; }
+    .flower-button:hover { background:#a02847; }
+    .flower-button:focus-visible { outline:3px solid #bc8d3f; outline-offset:4px; }
+    .letter { pointer-events:none; }
+    .opened .letter { position:fixed; left:50%; bottom:auto; top:50%; width:min(90vw,460px); height:auto; max-height:85svh; overflow:auto; transform:translate(-50%,-50%); z-index:12; padding:34px 30px; pointer-events:auto; transition:opacity .7s, transform 1.2s; }
+    .opened .envelope-wrap { transform:none; perspective:none; transform-style:flat; }
+    .opened .envelope { filter:none; }
+    .opened .letter h2 { font-size:clamp(1.8rem,7vw,2.5rem); }
+    .opened .message { font-size:1.1rem; line-height:1.6; }
+    .opened .signature { margin-top:18px; }
+    .opened .envelope-front { opacity:.35; transition:opacity 1s; }
+    .rose-time .envelope-wrap { opacity:0; pointer-events:none; transition:opacity .7s; }
+    .rose-time .letter { pointer-events:none; }
+    .rose-scene { bottom:0; height:min(52svh,470px); }
+    .final-text h2 { color:#f6d8bd; }
+    .final-text p { line-height:1.8; }
+    .restart { left:50%; right:auto; transform:translate(-50%,12px); bottom:24px; }
+    .rose-time .restart { transform:translate(-50%,0); }
+    @media(max-width:480px) { .intro {top:9svh;} .envelope-wrap {height:240px;} .opened .letter {padding:25px 23px;} .opened .message {font-size:1rem;} .final-text {top:11svh;} }
+    .seal-button { width:205px; height:56px; border-radius:99px; top:63%; display:flex; align-items:center; justify-content:center; gap:10px; font:600 .88rem Manrope,sans-serif; animation:none; }
+    .seal-button span {font-size:1.5rem;}
+    .open-label { top:calc(63% + 43px); letter-spacing:0; font-size:.72rem; }
+    .envelope {filter:none;}
+    .envelope-wrap {transform-style:flat;}
+    .letter, .opened .letter {position:absolute; left:5%; top:auto; bottom:12px; width:90%; height:235px; max-height:none; padding:24px; overflow:hidden; transform:translateY(0); z-index:2; transition:transform 1.4s cubic-bezier(.22,.65,.25,1) .85s; pointer-events:none;}
+    .letter > * {opacity:0; transition:opacity .5s;}
+    .letter::before {content:'Raha ♡'; left:0; right:0; top:40px; font:italic 2rem Georgia,serif;}
+    .letter::after {content:'Farriin qalbiga ka timid'; top:95px; left:0; right:0; font: .8rem Manrope,sans-serif;}
+    .opened .letter {transform:translateY(-245px);}
+    .opened .envelope-front {opacity:1;}
+    .opened .flap {opacity:1; z-index:1;}
+    .reading .letter {position:fixed; left:50%; top:50%; bottom:auto; width:min(90vw,460px); height:auto; max-height:86svh; overflow:auto; padding:30px 26px; transform:translate(-50%,-50%); z-index:12; pointer-events:auto; transition:none; animation:unfold .65s ease both;}
+    .reading .letter > * {opacity:1;}
+    .reading .letter::before,.reading .letter::after {display:none;}
+    .reading .envelope-back,.reading .envelope-front,.reading .flap {opacity:0; transition:opacity .5s;}
+    .rose-time .letter {pointer-events:none;}
+    @keyframes unfold {from {opacity:.5; scale:.88;} to {opacity:1; scale:1;}}
+    @media(max-width:480px) {.letter,.opened .letter {height:195px;} .opened .letter {transform:translateY(-205px);} .reading .letter {height:auto;transform:translate(-50%,-50%);} .opened .message {font-size:1rem;line-height:1.55;}}
+    .rose-scene .stem,.rose-scene .leaf,.rose-scene .rose {display:none;}
+    .rose-scene {width:min(85vw,420px);height:64svh;bottom:0;}
+    .real-rose {width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 12px 30px #0006);}
+    .rose-time .envelope-wrap {opacity:1;}
+    .rose-time .letter {opacity:1;position:relative;top:auto;left:auto;transform:none;max-height:none;width:min(90vw,460px);margin:100svh auto 80px;pointer-events:auto;animation:none;}
+    .rose-time .experience {display:block;height:auto;min-height:0;width:100%;}
+    .rose-time .envelope-wrap {width:100%;height:auto;margin:0;}
+    .rose-time .envelope {position:relative;}
+    .rose-time .final-text {position:absolute;}
+    .rose-time .rose-scene {position:absolute;top:32svh;bottom:auto;}
+    .rose-time.stage {display:block;}
+    .final-text p {font-size:1rem;}
+    .flower-button[hidden] {display:none;}
+    .rose-time .real-rose {transform-origin:50% 95%; animation:rose-sway 5s ease-in-out infinite;}
+    @keyframes rose-sway {
+      0%,100% {transform:rotate(-3deg) translateY(0);}
+      50% {transform:rotate(3deg) translateY(-9px);}
+    }
+    @media(prefers-reduced-motion:reduce) {.rose-time .real-rose {animation:none;}}
+    .signature {line-height:1.6;}
+    .memory-slide {position:absolute;inset:0;opacity:0;transform:translateY(20px) scale(.94);transition:opacity 1.2s ease,transform 1.6s ease;pointer-events:none;}
+    .memory-slide.active {opacity:1;transform:translateY(0) scale(1);}
+    .memory-slide img {width:100%;height:100%;object-fit:contain;border-radius:18px;}
+    .memory-slide:not(.rose-slide) {padding:8px;background:#ffffff0a;border:1px solid #d9b86a55;border-radius:22px;box-shadow:0 18px 60px #0005;}
+    .rose-time .rose-scene {width:min(85vw,420px);height:58svh;top:35svh;}
+    .rose-time .final-text {top:4svh;}
+    .final-text h2 {font-size:clamp(2rem,8vw,3.5rem);}
+    @media(prefers-reduced-motion:reduce) {.memory-slide {transition:none;transform:none;}}
+    .memory-slide.rose-slide {display:none;}
+    .memory-slide.finale-rose {display:block;opacity:0;z-index:20;transform:translateY(32%) scale(.04);transform-origin:50% 80%;transition:opacity 1.4s ease,transform 3s cubic-bezier(.16,.75,.2,1);}
+    .gathering .memory-slide:not(.rose-slide) {opacity:1;transform:translate(var(--fan-x),var(--fan-y)) rotate(var(--fan-angle)) scale(.56);transition:opacity 1s ease,transform 2s cubic-bezier(.22,.8,.2,1);}
+    .joined .memory-slide:not(.rose-slide) {transform:translate(0,20%) rotate(var(--stack-angle)) scale(.43);}
+    .blooming .memory-slide:not(.rose-slide) {opacity:.55;transform:translate(0,36%) rotate(var(--stack-angle)) scale(.33);}
+    .blooming .memory-slide.finale-rose {opacity:1;transform:translateY(-8%) scale(.9);}
+    @media(prefers-reduced-motion:reduce) {.memory-slide.finale-rose,.gathering .memory-slide:not(.rose-slide) {transition:none;}}
+    .gathering .memory-slide:not(.rose-slide) {transform:translate(calc(var(--fan-x) * 1.8),var(--fan-y)) rotate(var(--fan-angle)) scale(.44);}
+    .joined .memory-slide:not(.rose-slide) {transform:translate(0,20%) rotate(var(--stack-angle)) scale(.28);}
+    .blooming .memory-slide:not(.rose-slide) {opacity:0;transform:translate(0,25%) rotate(0deg) scale(.04);transition:opacity 2s ease,transform 2.5s ease;}
+    .sound-toggle {position:fixed;right:18px;top:18px;z-index:60;border:1px solid #d9b86a55;border-radius:99px;padding:10px 14px;background:#241126dd;color:#f7d9bd;font:500 .75rem Manrope,sans-serif;cursor:pointer;}
+    .intro h1 > .name-rest:first-child {margin-bottom:8px;}
+  </style>
+</head>
+<body>
+  <main class="stage" id="stage">
+    <div class="glow" aria-hidden="true"></div>
+
+    <header class="intro">
+      <h1><span class="name-rest">Dunideyda</span> Raha<span class="name-rest">Iftin Hussein</span></h1>
+      <p>25 · OCTOBER · 2026</p>
+    </header>
+
+    <section class="experience" aria-label="Farriinta dhalashada">
+      <div class="envelope-wrap">
+        <div class="envelope">
+          <div class="envelope-back"></div>
+
+          <article class="letter" aria-live="polite">
+            <p class="date">25 October 2026</p>
+            <h2>Raha, jacaylkayga ♡</h2>
+            <p class="message">
+              Dunideyda Raha, dhalasho wanaagsan,waxaan kugu hambalyeyneya maanta oo ah maalintii aad dunidan kusoo biirtey oo ay bilaabatey nasiibkeyga waa maalin anigana ii gaar ah oo waa maalinti uu daarmey xidig ka dhex ifeya gudaha qalbigeyga, Nolosheydiye erayo kuma soo koobi karo inta aan ku jeclahay. Waxaan jeclahay inaan ku arko adigoo faraxsan, dhoollacaddaynaya, oo gaaraya wax kasta oo aad hiigsanayso.
+              <span class="blessing">Ilaahay ha ku siiyo cimri dheer oo barako leh, caafimaad iyo farxad waarta. Murugada ha kaa fogeeyo, ducadaadana ha kaa aqbalo. Sannadkan cusub ee noloshaada ha kuu noqdo mid kheyr iyo guul kuu horseeda. Aamiin.</span>
+            </p>
+            <p class="signature">Waan ku jeclahay, Rahadeyda,weligaa ii faraxsanaaw nolosheyda inta aad faraxsan tahay ayaa ana ahay qofka ugu farxada badan dunida❤️💯  Dhalasho wanaagsan, boqoradeyda. ♡</p>
+            <button class="flower-button" id="flowerButton" type="button">halkaan riix</button>
+          </article>
+
+          <div class="flap" aria-hidden="true"></div>
+          <div class="envelope-front" aria-hidden="true"></div>
+          <button class="seal-button" id="openButton" type="button" aria-label="Fur baqshadda">
+            <span>♡</span> Fur baqshadda
+          </button>
+          <span class="open-label">Waxaa kuugu jirta farriin aan kuu qoray</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="rose-scene" aria-label="Sawirrada iyo ubaxa">
+      <div class="memory-slide active"><img src="01-1000410997.webp" alt="Sawirka koowaad" /></div>
+      <div class="memory-slide rose-slide"><img class="real-rose" src="real-rose.webp" alt="Ubax cas" /></div>
+      <div class="memory-slide"><img src="02-1000319886.webp" alt="Sawirka labaad" /></div>
+      <div class="memory-slide rose-slide"><img class="real-rose" src="real-rose.webp" alt="Ubax cas" /></div>
+      <div class="memory-slide"><img src="03-1000319921.webp" alt="Sawirka saddexaad" /></div>
+      <div class="memory-slide rose-slide"><img class="real-rose" src="real-rose.webp" alt="Ubax cas" /></div>
+      <div class="memory-slide"><img src="04-1000399254.webp" alt="Sawirka afraad" /></div>
+      <div class="memory-slide rose-slide"><img class="real-rose" src="real-rose.webp" alt="Ubax cas" /></div>
+      <div class="memory-slide"><img src="05-1000398659.webp" alt="Sawirka shanaad" /></div>
+      <div class="memory-slide rose-slide"><img class="real-rose" src="real-rose.webp" alt="Ubax cas" /></div>
+      <div class="stem"></div>
+      <div class="leaf one"></div>
+      <div class="leaf two"></div>
+      <div class="rose" aria-hidden="true">
+        <i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i>
+        <i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i>
+      </div>
+    </section>
+
+    <div class="final-text">
+      <p class="eyebrow">Happy birthday · 25 October 2026</p>
+      <h2>Raha, ubaxaygii</h2>
+      <p>Ubaxan adigaan kuu diyaariyey.<br />Dhalasho wanaagsan, gacalisadayda. Aad baan kuu jeclahay. ♡</p>
+    </div>
+
+    <button class="restart" id="restartButton" type="button">Dib u daawo ↻</button>
+    <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false">♫ Daar violin-ka</button>
+  </main>
+
+  <audio id="birthdayAudio" src="birthday-violin.mp3" preload="auto" loop></audio>
+  <script>
+    const birthdayAudio = document.getElementById('birthdayAudio');
+    birthdayAudio.volume = .85;
+    const stage = document.getElementById('stage');
+    const openButton = document.getElementById('openButton');
+    const restartButton = document.getElementById('restartButton');
+    let roseTimer;
+    let petalTimer;
+    let slideTimer;
+    let audioCtx, masterGain, musicTimer, bloomSoundTimer;
+    let soundEnabled = true;
+    async function initAudio() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return false;
+        audioCtx = new AudioContext();
+        masterGain = audioCtx.createGain();
+        masterGain.gain.value = soundEnabled ? .9 : 0;
+        const compressor=audioCtx.createDynamicsCompressor();
+        compressor.threshold.value=-18; compressor.ratio.value=3;
+        masterGain.connect(compressor).connect(audioCtx.destination);
+        const echo=audioCtx.createDelay(2), feedback=audioCtx.createGain(), wet=audioCtx.createGain();
+        echo.delayTime.value=.32; feedback.gain.value=.24; wet.gain.value=.22;
+        masterGain.connect(echo); echo.connect(feedback).connect(echo); echo.connect(wet).connect(compressor);
+      }
+      if(audioCtx.state !== 'running') await audioCtx.resume();
+      return audioCtx.state === 'running';
+    }
+    function violin(frequency, offset, duration, volume=.13) {
+      if(!audioCtx || !soundEnabled) return;
+      const at=audioCtx.currentTime+offset;
+      const bow=audioCtx.createOscillator(), filter=audioCtx.createBiquadFilter(), envelope=audioCtx.createGain();
+      const vibrato=audioCtx.createOscillator(), depth=audioCtx.createGain();
+      bow.type='sawtooth'; bow.frequency.value=frequency;
+      filter.type='lowpass'; filter.frequency.value=2600; filter.Q.value=.55;
+      vibrato.frequency.value=5.2; depth.gain.setValueAtTime(0,at); depth.gain.linearRampToValueAtTime(9,at+.2);
+      vibrato.connect(depth).connect(bow.detune);
+      envelope.gain.setValueAtTime(.0001,at);
+      envelope.gain.linearRampToValueAtTime(volume,at+.1);
+      envelope.gain.setValueAtTime(volume*.82,at+Math.max(.12,duration-.18));
+      envelope.gain.exponentialRampToValueAtTime(.0001,at+duration+.2);
+      bow.connect(filter).connect(envelope).connect(masterGain);
+      bow.start(at); vibrato.start(at);
+      bow.stop(at+duration+.25); vibrato.stop(at+duration+.25);
+    }
+    function tone(frequency, offset=0, duration=.3, volume=.06, type='sine') {
+      if(!audioCtx || !soundEnabled) return;
+      const start=audioCtx.currentTime+offset;
+      [1,2,3].forEach((harmonic,i)=>{
+        const osc=audioCtx.createOscillator(), gain=audioCtx.createGain();
+        osc.type='sine'; osc.frequency.value=frequency*harmonic;
+        const level=volume*[1,.2,.045][i];
+        gain.gain.setValueAtTime(.0001,start);
+        gain.gain.exponentialRampToValueAtTime(level,start+.06);
+        gain.gain.exponentialRampToValueAtTime(Math.max(.0002,level*.3),start+duration*.35);
+        gain.gain.exponentialRampToValueAtTime(.0001,start+duration);
+        osc.connect(gain).connect(masterGain);
+        osc.start(start); osc.stop(start+duration+.05);
+      });
+    }
+    function effect(kind) {
+      if(!audioCtx || !soundEnabled) return;
+      const notes = {click:[261.63,329.63,392],paper:[196,261.63,329.63,392],photos:[261.63,329.63,392,523.25],join:[392,329.63,261.63],bloom:[261.63,329.63,392,523.25,659.25,784],sway:[261.63,392,523.25]}[kind];
+      notes.forEach((n,i)=>tone(n,i*(kind==='bloom'?.55:.35),kind==='sway'?3.5:4,kind==='sway'?.008:.018));
+    }
+    function birthdayMusic() {
+      if(!audioCtx || document.hidden) return;
+      const tune=[[392,.5],[392,.5],[440,1],[392,1],[523,1],[494,2],[392,.5],[392,.5],[440,1],[392,1],[587,1],[523,2],[392,.5],[392,.5],[784,1],[659,1],[523,1],[494,1],[440,2],[698,.5],[698,.5],[659,1],[523,1],[587,1],[523,2]];
+      let t=.2;
+      for(let verse=0;verse<2;verse++) {
+        tune.forEach(([f,beats])=>{violin(f,t,beats*.85);t+=beats*.85;});
+        t+=2;
+      }
+      const chords=[[130.81,164.81,196],[174.61,220,261.63],[196,246.94,293.66],[130.81,164.81,196]];
+      for(let bar=0;bar<16;bar++) {
+        const chord=chords[bar%4];
+        chord.forEach((f,i)=>tone(f,.2+bar*3.4+i*.22,4.2,.014));
+        tone(chord[0]/2,.2+bar*3.4,3.5,.012);
+      }
+    }
+    async function startMusic() {
+      try {
+        if(!soundEnabled) return;
+        birthdayAudio.muted = false;
+        await birthdayAudio.play();
+        document.getElementById('soundToggle').textContent=soundEnabled?'♫ Codka dami':'♫ Daar violin-ka';
+        document.getElementById('soundToggle').setAttribute('aria-pressed',String(soundEnabled));
+      } catch (_) {
+        document.getElementById('soundToggle').textContent='♫ Taabo si codku u bilaabmo';
+      }
+    }
+    document.getElementById('soundToggle').addEventListener('click', async () => {
+      soundEnabled=birthdayAudio.paused;
+      if(soundEnabled) await startMusic();
+      else birthdayAudio.pause();
+      if(masterGain) masterGain.gain.setTargetAtTime(soundEnabled?.9:0,audioCtx.currentTime,.08);
+      document.getElementById('soundToggle').textContent=soundEnabled?'♫ Codka dami':'♫ Daar violin-ka';
+      document.getElementById('soundToggle').setAttribute('aria-pressed',String(soundEnabled));
+    });
+    let slideIndex = 0;
+    const slides = Array.from(document.querySelectorAll('.memory-slide:not(.rose-slide)'));
+    const finaleRose = document.querySelector('.rose-slide');
+    finaleRose.classList.add('finale-rose');
+    const sequenceTimers = [];
+    function later(action, delay) { sequenceTimers.push(setTimeout(action, delay)); }
+    slides.forEach((slide, i) => {
+      slide.style.setProperty('--fan-x', [-30,-16,0,16,30][i] + '%');
+      slide.style.setProperty('--fan-y', [5,-7,-12,-7,5][i] + '%');
+      slide.style.setProperty('--fan-angle', [-18,-9,0,9,18][i] + 'deg');
+      slide.style.setProperty('--stack-angle', [-7,-3,0,3,7][i] + 'deg');
+    });
+    function selectSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        slide.setAttribute('aria-hidden', String(i !== index));
+      });
+    }
+
+    function softChime() {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const ctx = new AudioContext();
+        const notes = [523.25, 659.25, 783.99];
+        notes.forEach((frequency, index) => {
+          const oscillator = ctx.createOscillator();
+          const gain = ctx.createGain();
+          oscillator.type = 'sine';
+          oscillator.frequency.value = frequency;
+          gain.gain.setValueAtTime(0, ctx.currentTime + index * .16);
+          gain.gain.linearRampToValueAtTime(.055, ctx.currentTime + index * .16 + .025);
+          gain.gain.exponentialRampToValueAtTime(.001, ctx.currentTime + index * .16 + .8);
+          oscillator.connect(gain).connect(ctx.destination);
+          oscillator.start(ctx.currentTime + index * .16);
+          oscillator.stop(ctx.currentTime + index * .16 + .85);
+        });
+      } catch (_) {}
+    }
+
+    function releasePetals() {
+      const count = window.innerWidth < 600 ? 16 : 25;
+      for (let i = 0; i < count; i++) {
+        const petal = document.createElement('span');
+        petal.className = 'floating-petal';
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.setProperty('--fall', (4.8 + Math.random() * 3.8) + 's');
+        petal.style.setProperty('--drift', (-90 + Math.random() * 180) + 'px');
+        petal.style.animationDelay = (Math.random() * 2.2) + 's';
+        petal.style.transform = `scale(${.55 + Math.random() * .8})`;
+        document.body.appendChild(petal);
+        petal.addEventListener('animationend', () => petal.remove());
+      }
+    }
+
+    function openEnvelope() {
+      if (stage.classList.contains('opened')) return;
+      stage.classList.add('opened');
+      openButton.disabled = true;
+      roseTimer = setTimeout(() => {
+        stage.classList.add('reading');
+        document.getElementById('flowerButton').focus({preventScroll:true});
+      }, 2400);
+      startMusic();
+      initAudio().catch(() => {});
+      effect('click');
+      later(() => effect('paper'), 850);
+    }
+
+    function showRose() {
+        if(stage.classList.contains('rose-time')) return;
+        stage.classList.add('rose-time');
+        effect('click');
+        later(() => effect('photos'), 250);
+        document.getElementById('flowerButton').hidden = true;
+        window.scrollTo({top:0, behavior:'smooth'});
+        stage.classList.add('gathering');
+        slides.forEach(slide => slide.setAttribute('aria-hidden', 'false'));
+        later(() => {stage.classList.add('joined'); effect('join');}, 2200);
+        later(() => {
+          stage.classList.add('blooming');
+          effect('bloom');
+          bloomSoundTimer=setInterval(() => {if(!document.hidden) effect('sway');},10000);
+          finaleRose.setAttribute('aria-hidden', 'false');
+        }, 4200);
+    }
+
+    function restart() {
+      effect('click');
+      clearInterval(bloomSoundTimer);
+      clearTimeout(roseTimer);
+      clearInterval(petalTimer);
+      clearInterval(slideTimer);
+      sequenceTimers.forEach(clearTimeout);
+      sequenceTimers.length = 0;
+      stage.classList.remove('gathering', 'joined', 'blooming');
+      finaleRose.setAttribute('aria-hidden', 'true');
+      selectSlide(0);
+      document.querySelectorAll('.floating-petal').forEach(p => p.remove());
+      stage.classList.remove('opened', 'reading', 'rose-time');
+      document.getElementById('flowerButton').hidden = false;
+      openButton.disabled = false;
+      openButton.focus({ preventScroll: true });
+    }
+
+    openButton.addEventListener('click', openEnvelope);
+    document.getElementById('flowerButton').addEventListener('click', showRose);
+    restartButton.addEventListener('click', restart);
+  </script>
+</body>
+</html>
